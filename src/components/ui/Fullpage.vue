@@ -1,13 +1,13 @@
 <template>
   <div class="fullPage" ref="container" @mousewheel="scrollPage">
-    <div class="fullPage-scroll" ref="scorllEl" :index="0">
-      <div class="fullPage-slide" :style="{height:containerHeight}">
+    <div class="fullPage-scroll" ref="scrollEl" :index="0">
+      <div class="fullPage-slide" :style="{height:containerHeight+'px'}">
         <profile></profile>
       </div>
-      <div class="fullPage-slide" :style="{height:containerHeight}">
+      <div class="fullPage-slide" :style="{height:containerHeight+'px'}">
         <about-me></about-me>
       </div>
-      <div class="fullPage-slide" :style="{height:containerHeight}">3</div>
+      <div class="fullPage-slide" :style="{height:containerHeight+'px'}">3</div>
     </div>
   </div>
 </template>
@@ -25,28 +25,33 @@ export default {
   },
   data: function () {
     return {
-      containerHeight: window.innerHeight + 'px',
-      index: 0
+      containerHeight: window.innerHeight,
+      index: 0,
+      top: 0
     }
   },
   mounted: function () {
-    this.containerHeight = this.$refs.container.offsetHeight + 'px'
+    this.containerHeight = this.$refs.container.offsetHeight
   },
   methods: {
     scrollPage: function (e) {
       let height = this.containerHeight
       let index = this.index
       let direction = e.deltaY > 0 ? 'down' : 'up'
-      let scorllEl = this.$refs.scorllEl
+      let scrollEl = this.$refs.scrollEl
       if (direction === 'down') {
         console.log('down')
         if (index < 2) {
-          attribute.style(scorllEl, 'transform', `translateY(-${index * height + height})`)
+          this.top = this.top - height
+          this.index++
+          attribute.style(scrollEl, 'transform', `translateY(${this.top}px)`)
         }
       } else {
         console.log('up')
-        if (index > -1) {
-          attribute.style(scorllEl, 'transform', `translateY(${index * height - height})`)
+        if (index > 0) {
+          this.top = this.top + height
+          this.index--
+          attribute.style(scrollEl, 'transform', `translateY(${this.top}px)`)
         }
       }
     }
@@ -72,6 +77,15 @@ export default {
     }
     &-slide {
       background: #f2f2f2;
+      &:nth-child(1){
+        background:orange;
+      }
+      &:nth-child(2){
+        background:rgba(124,246,108,0.9);
+      }
+      &:nth-child(3){
+        background:rgba(124,146,108,0.9);
+      }
     }
   }
 </style>
