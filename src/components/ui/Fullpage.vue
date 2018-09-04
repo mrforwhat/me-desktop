@@ -1,13 +1,13 @@
 <template>
   <div class="fullPage" ref="container" @mousewheel="scrollPage">
     <div class="fullPage-scroll" ref="scrollEl" :index="0">
-      <div class="fullPage-slide" :style="{height:containerHeight+'px'}">
+      <section class="fullPage-slide" :style="{height:containerHeight+'px'}">
         <profile></profile>
-      </div>
-      <div class="fullPage-slide" :style="{height:containerHeight+'px'}">
+      </section>
+      <section class="fullPage-slide" :style="{height:containerHeight+'px'}">
         <about-me></about-me>
-      </div>
-      <div class="fullPage-slide" :style="{height:containerHeight+'px'}">3</div>
+      </section>
+      <section class="fullPage-slide" :style="{height:containerHeight+'px'}">3</section>
     </div>
   </div>
 </template>
@@ -27,7 +27,8 @@ export default {
     return {
       containerHeight: window.innerHeight,
       index: 0,
-      top: 0
+      top: 0,
+      timer: 0 // 用于节流
     }
   },
   mounted: function () {
@@ -35,24 +36,30 @@ export default {
   },
   methods: {
     scrollPage: function (e) {
-      let height = this.containerHeight
-      let index = this.index
-      let direction = e.deltaY > 0 ? 'down' : 'up'
-      let scrollEl = this.$refs.scrollEl
-      if (direction === 'down') {
-        console.log('down')
-        if (index < 2) {
-          this.top = this.top - height
-          this.index++
-          attribute.style(scrollEl, 'transform', `translateY(${this.top}px)`)
-        }
-      } else {
-        console.log('up')
-        if (index > 0) {
-          this.top = this.top + height
-          this.index--
-          attribute.style(scrollEl, 'transform', `translateY(${this.top}px)`)
-        }
+      var the = this
+      if (!the.timer) {
+        the.timer = setTimeout(function () {
+          let height = the.containerHeight
+          let index = the.index
+          let direction = e.deltaY > 0 ? 'down' : 'up'
+          let scrollEl = the.$refs.scrollEl
+          if (direction === 'down') {
+            console.log('down')
+            if (index < 2) {
+              the.top = the.top - height
+              the.index++
+              attribute.style(scrollEl, 'transform', `translateY(${the.top}px)`)
+            }
+          } else {
+            console.log('up')
+            if (index > 0) {
+              the.top = the.top + height
+              the.index--
+              attribute.style(scrollEl, 'transform', `translateY(${the.top}px)`)
+            }
+          }
+          the.timer = 0
+        }, 500)
       }
     }
   }
@@ -69,17 +76,10 @@ export default {
     overflow: hidden;
     z-index: 999;
     &-scroll {
-      -webkit-transition: all ease 1s;
-      -moz-transition: all ease 1s;
-      -ms-transition: all ease 1s;
-      -o-transition: all ease 1s;
-      transition: all ease 1s;
+      transition: all ease 1.5s;
     }
     &-slide {
       background: #f2f2f2;
-      &:nth-child(1){
-        background:orange;
-      }
       &:nth-child(2){
         background:rgba(124,246,108,0.9);
       }
