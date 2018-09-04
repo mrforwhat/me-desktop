@@ -5,7 +5,7 @@
         <profile></profile>
       </section>
       <section class="fullPage-slide" :style="{height:containerHeight+'px'}">
-        <about-me></about-me>
+        <daily></daily>
       </section>
       <section class="fullPage-slide" :style="{height:containerHeight+'px'}">3</section>
     </div>
@@ -14,14 +14,14 @@
 
 <script>
 import Profile from '@/components/resume/Profile'
-import AboutMe from '@/components/resume/AboutMe'
+import Daily from '@/components/resume/Daily'
 import attribute from 'blear.core.attribute'
 
 export default {
   name: 'Fullpage',
   components: {
     Profile,
-    AboutMe
+    Daily
   },
   data: function () {
     return {
@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     scrollPage: function (e) {
-      var the = this
+      let the = this
       if (!the.timer) {
         the.timer = setTimeout(function () {
           let height = the.containerHeight
@@ -44,14 +44,12 @@ export default {
           let direction = e.deltaY > 0 ? 'down' : 'up'
           let scrollEl = the.$refs.scrollEl
           if (direction === 'down') {
-            console.log('down')
             if (index < 2) {
               the.top = the.top - height
               the.index++
               attribute.style(scrollEl, 'transform', `translateY(${the.top}px)`)
             }
           } else {
-            console.log('up')
             if (index > 0) {
               the.top = the.top + height
               the.index--
@@ -80,9 +78,6 @@ export default {
     }
     &-slide {
       background: #f2f2f2;
-      &:nth-child(2){
-        background:rgba(124,246,108,0.9);
-      }
       &:nth-child(3){
         background:rgba(124,146,108,0.9);
       }
