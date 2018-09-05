@@ -4,6 +4,9 @@
       <p class="daily-title">我的日常工作</p>
       <p class="daily-tip">神圣的工作在每个人的日常事务里，理想的前途在于一点一滴做起。</p>
     </div>
+    <div class="daily-content">
+      <div class="todolist"></div>
+    </div>
   </div>
 </template>
 
@@ -18,12 +21,13 @@ export default {
     height:100%;
     background:#232323;
     &-header {
-      padding-top:180px;
+      padding-top:140px;
       text-align: center;
     }
     &-title{
       font-size:38px;
       color:#fff;
+      padding:20px 0;
     }
     &-tip{
       color:rgba(255,255,255,.7);

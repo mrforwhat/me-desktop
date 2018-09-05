@@ -1,7 +1,9 @@
 <template>
   <div class="resume">
-    <nav-menu ref="nav"></nav-menu>
-    <full-page ref="fullpage"></full-page>
+    <transition enter-active-class="fadeIn" leave-active-class="fadeOut">
+    <nav-menu ref="nav" v-show="navShow" class="animated"></nav-menu>
+    </transition>
+    <full-page ref="fullpage" @slide="onSlide"></full-page>
   </div>
 </template>
 
@@ -13,6 +15,16 @@ export default {
   components: {
     FullPage,
     NavMenu
+  },
+  data: function () {
+    return {
+      navShow: false
+    }
+  },
+  methods: {
+    onSlide: function (index) {
+      this.navShow = index > 0
+    }
   }
 }
 </script>

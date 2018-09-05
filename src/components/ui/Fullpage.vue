@@ -57,6 +57,7 @@ export default {
             }
           }
           the.timer = 0
+          the.$emit('slide', the.index)
         }, 500)
       }
     }
