@@ -1,7 +1,7 @@
 <template>
   <div class="resume">
     <transition enter-active-class="fadeIn" leave-active-class="fadeOut">
-    <nav-menu ref="nav" v-show="navShow" class="animated"></nav-menu>
+    <nav-menu ref="nav" v-show="navShow" class="animated" @active="onActive"></nav-menu>
     </transition>
     <full-page ref="fullpage" @slide="onSlide"></full-page>
   </div>
@@ -23,6 +23,11 @@ export default {
   },
   methods: {
     onSlide: function (index) {
+      this.navShow = index > 0
+      this.$children[0].active(index)
+    },
+    onActive: function (index) {
+      this.$children[1].scrollTo(index)
       this.navShow = index > 0
     }
   }

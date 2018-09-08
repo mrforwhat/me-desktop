@@ -32,10 +32,11 @@ export default {
     Project,
     Daily
   },
+  props: ['activeIndex'],
   data: function () {
     return {
       containerHeight: window.innerHeight,
-      index: 0,
+      index: 0, // 上下滚动时页面所在的位置
       top: 0,
       timer: 0 // 用于节流
     }
@@ -69,6 +70,13 @@ export default {
           the.$emit('slide', the.index)
         }, 500)
       }
+    },
+    scrollTo: function (activeIndex) {
+      let height = this.containerHeight
+      let scrollEl = this.$refs.scrollEl
+      this.index = activeIndex
+      this.top = -activeIndex * height
+      attribute.style(scrollEl, 'transform', `translateY(${this.top}px)`)
     }
   }
 }
