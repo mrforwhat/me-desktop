@@ -53,7 +53,7 @@ export default {
           let direction = e.wheelDelta < 0 ? 'down' : 'up'
           let scrollEl = the.$refs.scrollEl
           if (direction === 'down') {
-            if (index < 2) {
+            if (index < 3) {
               the.top = the.top - height
               the.index++
               attribute.style(scrollEl, 'transform', `translateY(${the.top}px)`)
