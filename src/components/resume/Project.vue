@@ -59,7 +59,7 @@ export default {
     background: #03A9F4;
     height: 100%;
     &-header {
-      padding-top: 140px;
+      padding-top: 100px;
       text-align: center;
     }
     &-title {

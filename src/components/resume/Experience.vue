@@ -25,7 +25,7 @@ export default {
     background: #232323;
     height: 100%;
     &-header {
-      padding-top: 140px;
+      padding-top: 80px;
       text-align: center;
     }
     &-title {
@@ -39,7 +39,7 @@ export default {
     }
     &-content {
       width: 1200px;
-      padding-top: 60px;
+      padding-top: 30px;
       margin: 0 auto;
     }
   }
