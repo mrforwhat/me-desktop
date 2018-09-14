@@ -1,65 +1,67 @@
 <template>
-  <div class="daily">
-    <div class="daily-header">
-      <p class="daily-title">我的日常工作</p>
-      <p class="daily-tip">神圣的工作在每个人的日常事务里，理想的前途在于一点一滴做起。</p>
-    </div>
-    <div class="daily-content clearfix">
-      <transition enter-active-class="slideInLeft" leave-active-class="slideOutLeft">
-      <div class="panel panel_duty pull_left animated" v-show="index===1">
-        <p class="panel-title text_center">任务列表</p>
-        <div class="panel-content">
-          <ul class="todolist">
-            <li class="todolist-item">
-              <i class="iconfont icon-yes"></i>
-              配合UCD、产品经理，高度还原视觉设计稿
-            </li>
-            <li class="todolist-item">
-              <i class="iconfont icon-yes"></i>
-              公共组件封装，通用模块抽象
-            </li>
-            <li class="todolist-item">
-              <i class="iconfont icon-yes"></i>
-              前后端数据交互
-            </li>
-            <li class="todolist-item">
-              <i class="iconfont icon-yes"></i>
-              页面重构
-            </li>
-            <li class="todolist-item">
-              <i class="iconfont icon-yes"></i>
-              性能优化
-            </li>
-            <li class="todolist-item">
-              <i class="iconfont icon-yes"></i>
-              浏览器兼容性调试
-            </li>
-            <li class="todolist-item">
-              <i class="iconfont icon-yes"></i>
-              ua适配
-            </li>
-            <li class="todolist-item">
-              <i class="iconfont icon-yes"></i>
-              node中间件编写
-            </li>
-            <li class="todolist-item">
-              <i class="iconfont icon-yes"></i>
-              总结、讨论、制定团队前端开发规范
-            </li>
-            <li class="todolist-item">
-              <i class="iconfont icon-yes"></i>
-              关注技术前沿
-            </li>
-          </ul>
-        </div>
+  <div class="daily flex">
+    <div class="flex-container">
+      <div class="daily-header">
+        <p class="daily-title">我的日常工作</p>
+        <p class="daily-tip">神圣的工作在每个人的日常事务里，理想的前途在于一点一滴做起。</p>
       </div>
-      </transition>
-      <transition enter-active-class="slideInRight" leave-active-class="slideOutRight">
-      <div class="panel panel_skill pull_right animated" v-show="index===1">
-        <p class="panel-title text_center">技能魔方</p>
-        <magic-cube></magic-cube>
+      <div class="daily-content clearfix">
+        <transition enter-active-class="slideInLeft" leave-active-class="slideOutLeft">
+          <div class="panel panel_duty pull_left animated" v-show="index===1">
+            <p class="panel-title text_center">任务列表</p>
+            <div class="panel-content">
+              <ul class="todolist">
+                <li class="todolist-item">
+                  <i class="iconfont icon-yes"></i>
+                  配合UCD、产品经理，高度还原视觉设计稿
+                </li>
+                <li class="todolist-item">
+                  <i class="iconfont icon-yes"></i>
+                  公共组件封装，通用模块抽象
+                </li>
+                <li class="todolist-item">
+                  <i class="iconfont icon-yes"></i>
+                  前后端数据交互
+                </li>
+                <li class="todolist-item">
+                  <i class="iconfont icon-yes"></i>
+                  页面重构
+                </li>
+                <li class="todolist-item">
+                  <i class="iconfont icon-yes"></i>
+                  性能优化
+                </li>
+                <li class="todolist-item">
+                  <i class="iconfont icon-yes"></i>
+                  浏览器兼容性调试
+                </li>
+                <li class="todolist-item">
+                  <i class="iconfont icon-yes"></i>
+                  ua适配
+                </li>
+                <li class="todolist-item">
+                  <i class="iconfont icon-yes"></i>
+                  node中间件编写
+                </li>
+                <li class="todolist-item">
+                  <i class="iconfont icon-yes"></i>
+                  总结、讨论、制定团队前端开发规范
+                </li>
+                <li class="todolist-item">
+                  <i class="iconfont icon-yes"></i>
+                  关注技术前沿
+                </li>
+              </ul>
+            </div>
+          </div>
+        </transition>
+        <transition enter-active-class="slideInRight" leave-active-class="slideOutRight">
+          <div class="panel panel_skill pull_right animated" v-show="index===1">
+            <p class="panel-title text_center">技能魔方</p>
+            <magic-cube></magic-cube>
+          </div>
+        </transition>
       </div>
-      </transition>
     </div>
   </div>
 </template>

@@ -1,17 +1,20 @@
 <template>
-  <div class="experience">
-    <div class="experience-header">
-      <p class="experience-title">经历</p>
-      <p class="experience-tip">时间是伟大的作者，它必将给每一个人书写完美的结局</p>
-    </div>
-    <div class="experience-content">
-      <time-line></time-line>
+  <div class="experience flex">
+    <div class="flex-container">
+      <div class="experience-header">
+        <p class="experience-title">经历</p>
+        <p class="experience-tip">时间是伟大的作者，它必将给每一个人书写完美的结局</p>
+      </div>
+      <div class="experience-content">
+        <time-line></time-line>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import TimeLine from '@/components/ui/TimeLine'
+
 export default {
   name: 'Experience',
   components: {
@@ -21,7 +24,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .experience{
+  .experience {
     background: #232323;
     height: 100%;
     &-header {
