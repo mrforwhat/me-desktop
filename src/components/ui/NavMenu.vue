@@ -30,6 +30,9 @@ export default {
       this.lastItem.active = false
       this.lastItem = item
       this.$emit('active', item.index)
+      if (item.link) {
+        this.$router.push(item.link)
+      }
     },
     active: function (index) {
       if (this.lastItem) {
