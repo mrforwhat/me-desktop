@@ -1,7 +1,7 @@
 <template>
   <div class="resume">
     <transition enter-active-class="fadeIn" leave-active-class="fadeOut">
-    <nav-menu ref="nav" v-show="navShow" class="animated" @active="onActive"></nav-menu>
+    <nav-menu ref="nav" v-show="navShow" v-bind:navList="navList"  class="animated" @active="onActive"></nav-menu>
     </transition>
     <full-page ref="fullpage" @slide="onSlide"></full-page>
   </div>
@@ -10,6 +10,13 @@
 <script>
 import FullPage from '@/components/ui/FullPage'
 import NavMenu from '@/components/ui/NavMenu'
+let navList = [
+  {name: '主页', active: false, index: 0},
+  {name: '关于我', active: true, index: 1},
+  {name: '项目', active: false, index: 2},
+  {name: '经历', active: false, index: 3},
+  {name: '联系我', active: false, index: 4}
+]
 export default {
   name: 'Resume',
   components: {
@@ -18,7 +25,8 @@ export default {
   },
   data: function () {
     return {
-      navShow: false
+      navShow: false,
+      navList
     }
   },
   methods: {

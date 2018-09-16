@@ -1,6 +1,6 @@
 <template>
   <div class="fullPage" ref="container" @mousewheel="scrollPage">
-    <div class="fullPage-scroll" ref="scrollEl" :index="0">
+    <div class="fullPage-scroll" ref="scrollEl" :index="index" >
       <section class="fullPage-slide" :style="{height:containerHeight+'px'}">
         <profile></profile>
       </section>
@@ -32,7 +32,6 @@ export default {
     Project,
     Daily
   },
-  props: ['activeIndex'],
   data: function () {
     return {
       containerHeight: window.innerHeight,

@@ -41,7 +41,7 @@
                 </li>
                 <li class="todolist-item">
                   <i class="iconfont icon-yes"></i>
-                  node中间件编写
+                  构建、打包、生产、部署
                 </li>
                 <li class="todolist-item">
                   <i class="iconfont icon-yes"></i>

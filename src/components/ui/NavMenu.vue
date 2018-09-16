@@ -10,37 +10,33 @@
 </template>
 
 <script>
-let navList = [
-  {name: '主页', active: false, index: 0},
-  {name: '关于我', active: true, index: 1},
-  {name: '经历', active: false, index: 2},
-  {name: '项目', active: false, index: 3},
-  {name: '联系我', active: false, index: 4}
-]
-let lastItem = navList[1] || null
 export default {
   name: 'NavMenu',
+  props: ['navList'],
   data: function () {
     return {
-      navList: navList
     }
+  },
+  beforeMount: function () {
+    let navList = this.navList
+    this.lastItem = navList[0]
   },
   methods: {
     onActive: function (item) {
-      if (lastItem === item) {
+      if (this.lastItem === item) {
         return false
       }
       item.active = true
-      lastItem.active = false
-      lastItem = item
+      this.lastItem.active = false
+      this.lastItem = item
       this.$emit('active', item.index)
     },
     active: function (index) {
-      if (lastItem) {
-        lastItem.active = false
+      if (this.lastItem) {
+        this.lastItem.active = false
       }
       this.navList[index].active = true
-      lastItem = this.navList[index]
+      this.lastItem = this.navList[index]
     }
   }
 }
