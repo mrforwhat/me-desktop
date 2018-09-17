@@ -1,0 +1,19 @@
+.txt_limit {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.txt_danger {
+  color: #d9534f; }
+
+.txt_info {
+  color: #5bc0de; }
+
+.txt_success {
+  color: #5cb85c; }
+
+.txt_primary {
+  color: #337ab7; }
+
+.txt_warning {
+  color: #f0ad4e; }
