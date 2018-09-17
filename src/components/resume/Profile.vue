@@ -14,18 +14,18 @@
         </div>
       </transition>
       <div class="profile-link">
-        <div class="profile-link-item">
+        <a href="https://github.com/mrforwhat/me-desktop" class="profile-link-item">
           <i class="iconfont icon-github"></i>
-        </div>
-        <div class="profile-link-item">
+        </a>
+        <a class="profile-link-item">
           <i class="iconfont icon-weixin"></i>
-        </div>
-        <div class="profile-link-item">
+        </a>
+        <a class="profile-link-item">
           <i class="iconfont icon-email"></i>
-        </div>
-        <div class="profile-link-item">
+        </a>
+        <a href="#/blog/home" class="profile-link-item">
           <i class="iconfont icon-blog"></i>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -48,6 +48,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  a{
+    color:#111;
+  }
   .profile {
     height: 100%;
     &-header {

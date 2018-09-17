@@ -58,7 +58,7 @@ export default {
 
   .nav {
     margin: 0 auto;
-    width: 70%;
+    width: 1000px;
     color: #fff;
     &-item {
       padding: 0 30px;

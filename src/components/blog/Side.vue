@@ -73,7 +73,7 @@
           </div>
         </div>
         <div class="player-panel">
-          <audio src="http://fs.open.kugou.com/c634056378e8404c62555dcb1b597640/5b9f7864/G124/M00/15/08/HIcBAFpwy3CAVDr1AEIYchdgAok173.mp3" autoplay controls></audio>
+          <audio src="http://fs.open.kugou.com/c634056378e8404c62555dcb1b597640/5b9f7864/G124/M00/15/08/HIcBAFpwy3CAVDr1AEIYchdgAok173.mp3"  controls></audio>
         </div>
       </div>
     </div>
