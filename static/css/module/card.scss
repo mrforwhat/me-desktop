@@ -1,0 +1,20 @@
+$line-color: #222;
+$txt-color: #b9b9b9;
+$back-color: #222;
+.card {
+  border: 1px solid $line-color;
+  box-shadow: 1px 0px 9px rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  background-color: $back-color;
+  color: $txt-color;
+  &-title {
+    color: #a6a6a6;
+    padding: 15px;
+  }
+  &-content {
+
+  }
+  &-footer {
+    background: rgba(0, 0, 0, .7);
+  }
+}

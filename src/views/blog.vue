@@ -34,7 +34,8 @@ export default {
     background: #333;
     &-content {
       width: 1000px;
-      margin: 50px auto;
+      margin: 50px auto 0;
+      overflow:hidden;
     }
   }
 </style>

@@ -1,0 +1,23 @@
+@import "variable";
+.txt{
+  &_limit{
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  &_danger{
+    color:$danger-color;
+  }
+  &_info{
+    color:$info-color;
+  }
+  &_success{
+    color:$success-color;
+  }
+  &_primary{
+    color:$primary-color;
+  }
+  &_warning{
+    color:$warning-color;
+  }
+}
