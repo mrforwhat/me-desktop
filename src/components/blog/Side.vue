@@ -1,6 +1,6 @@
 <template>
     <div class="side">
-      <div class="card top10">
+      <div v-show="top10" class="card top10">
         <div class="card-title">最新文章</div>
         <div class="card-content">
           <ul class="top10-list">
@@ -11,7 +11,7 @@
           </ul>
         </div>
       </div>
-      <div class="card life">
+      <div v-show="life" class="card life">
         <div class="card-title">说一说</div>
         <div class="card-content">
           <ul class="life-list">
@@ -36,7 +36,7 @@
           </ul>
         </div>
       </div>
-      <div class="card hot">
+      <div v-show="hot" class="card hot">
         <div class="card-title">热门点击</div>
         <div class="card-content">
           <ul class="hot-list">
@@ -47,7 +47,7 @@
           </ul>
         </div>
       </div>
-      <div class="card player">
+      <div v-show="player" class="card player">
         <div class="card-title">轻松一刻</div>
         <div class="card-content">
           <div class="player-album"></div>
@@ -82,6 +82,7 @@
 <script>
 export default {
   name: 'Side',
+  props: ['top10', 'life', 'hot', 'player'],
   data: function () {
     return {
       top10List: [

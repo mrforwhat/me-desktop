@@ -11,10 +11,10 @@
 import NavMenu from '@/components/ui/NavMenu'
 
 let navList = [
-  {name: '主页', link: 'home', active: true, index: 0},
-  {name: '文章', link: 'article', active: false, index: 1},
-  {name: '分类', link: 'category', active: false, index: 2},
-  {name: '标签', link: 'tag', active: false, index: 3}
+  {name: '主页', link: '/blog/home', active: true, index: 0},
+  {name: '文章', link: '/blog/article', active: false, index: 1},
+  {name: '分类', link: '/blog/category', active: false, index: 2},
+  {name: '标签', link: '/blog/tag', active: false, index: 3}
 ]
 export default {
   name: 'blog',

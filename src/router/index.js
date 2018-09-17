@@ -4,6 +4,7 @@ import Resume from '@/views/Resume'
 import Blog from '@/views/Blog'
 import Home from '@/components/blog/Home'
 import Article from '@/components/blog/Article'
+import ArticleDetail from '@/components/blog/ArticleDetail'
 import Category from '@/components/blog/Category'
 import Tag from '@/components/blog/Tag'
 Vue.use(Router)
@@ -29,6 +30,11 @@ export default new Router({
           path: 'article',
           name: 'article',
           component: Article
+        },
+        {
+          path: 'article/:id',
+          name: 'articleDetail',
+          component: ArticleDetail
         },
         {
           path: 'category',

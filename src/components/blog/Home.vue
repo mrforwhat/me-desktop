@@ -43,16 +43,16 @@
         <ul class="article-list">
           <li class="article-item" v-for="(item,index) in articleList" :key="index">
             <div class="card">
-              <div class="card-title">{{item.title}}</div>
+              <div class="card-title" @click="onDetail(item.id)">{{item.title}}</div>
               <div class="card-content">
-                <div class="article-pic" :style="{'background-image':'url('+item.pic+')'}">
+                <div class="article-pic" @click="onDetail(item.id)" :style="{'background-image':'url('+item.pic+')'}">
                 </div>
                 <div class="article-desc">{{item.desc}}</div>
               </div>
               <div class="card-footer">
                 <div class="article-date"><i class="iconfont icon-date"></i>{{item.date}}</div>
                 <div class="article-action">
-                  <span><i class="iconfont icon-message"></i>{{item.comments}}</span>
+                  <span @click="onDetail(item.id)"><i class="iconfont icon-message"></i>{{item.comments}}</span>
                   <span><i class="iconfont icon-like"></i>{{item.favs}}</span>
                 </div>
               </div>
@@ -61,7 +61,7 @@
         </ul>
       </div>
       <div class="home-side">
-        <Side></Side>
+        <Side :top10="top10" :life="life" :hot="hot" :player="player" ></Side>
       </div>
     </div>
   </div>
@@ -79,6 +79,10 @@ export default {
   },
   data: function () {
     return {
+      top10: true,
+      life: true,
+      hot: true,
+      player: true,
       articleList: [
         {
           id: 1,
@@ -126,6 +130,11 @@ export default {
           comments: 5
         }
       ]
+    }
+  },
+  methods: {
+    onDetail: function (id) {
+      this.$router.push(`/blog/article/${id}`)
     }
   }
 }
