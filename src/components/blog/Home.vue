@@ -15,9 +15,11 @@
         <div class="card-footer">
           <ul class="aboutme-link clearfix">
             <li class="aboutme-link-item pull_left" title="简历">
-              <svg class="icon" aria-hidden="true">
+              <a href="/">
+                <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-resume"></use>
               </svg>
+              </a>
             </li>
             <li class="aboutme-link-item pull_left" title="主页">
               <svg class="icon" aria-hidden="true">
@@ -30,9 +32,11 @@
               </svg>
             </li>
             <li class="aboutme-link-item pull_left" title="github">
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-git"></use>
-              </svg>
+              <a href="https://github.com/mrforwhat/me-desktop">
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-git"></use>
+                </svg>
+              </a>
             </li>
           </ul>
         </div>
