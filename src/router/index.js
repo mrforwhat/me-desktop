@@ -24,27 +24,32 @@ export default new Router({
         {
           path: 'home',
           name: 'home',
-          component: Home
+          component: Home,
+          meta: {index: 0}
         },
         {
           path: 'article',
           name: 'article',
-          component: Article
+          component: Article,
+          meta: {index: 1}
         },
         {
           path: 'article/:id',
           name: 'articleDetail',
-          component: ArticleDetail
+          component: ArticleDetail,
+          meta: {index: 1}
         },
         {
           path: 'category',
           name: 'category',
-          component: Category
+          component: Category,
+          meta: {index: 2}
         },
         {
           path: 'tag',
           name: 'tag',
-          component: Tag
+          component: Tag,
+          meta: {index: 3}
         }
       ]
     }

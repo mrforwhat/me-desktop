@@ -14,8 +14,7 @@ let navList = [
   {name: '主页', active: false, index: 0},
   {name: '关于我', active: true, index: 1},
   {name: '项目', active: false, index: 2},
-  {name: '经历', active: false, index: 3},
-  {name: '联系我', active: false, index: 4}
+  {name: '经历', active: false, index: 3}
 ]
 export default {
   name: 'Resume',
