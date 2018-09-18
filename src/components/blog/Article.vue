@@ -34,6 +34,7 @@ export default {
 
   .article {
     display: flex;
+    padding-bottom:20px;
     &-body {
       flex: none;
       width: 645px;

@@ -4,12 +4,15 @@
     <div class="blog-content">
       <router-view></router-view>
     </div>
+    <div class="blog-footer">
+      <my-footer></my-footer>
+    </div>
   </div>
 </template>
 
 <script>
 import NavMenu from '@/components/ui/NavMenu'
-
+import MyFooter from '@/components/blog/MyFooter'
 let navList = [
   {name: '主页', link: '/blog/home', active: true, index: 0},
   {name: '文章', link: '/blog/article', active: false, index: 1},
@@ -19,7 +22,8 @@ let navList = [
 export default {
   name: 'blog',
   components: {
-    NavMenu
+    NavMenu,
+    MyFooter
   },
   data: function () {
     return {
