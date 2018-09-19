@@ -81,64 +81,33 @@ export default {
     Side,
     Swiper
   },
+  created: function () {
+    this.getArticleList()
+  },
   data: function () {
     return {
       top10: true,
       life: true,
       hot: true,
       player: true,
-      articleList: [
-        {
-          id: 1,
-          title: '我希望我的爱情是这样的',
-          desc: '我希望我的爱情是这样的，相濡以沫，举案齐眉，平淡如水。我在岁月中找到他，依靠他，将一生交付给他。做他的妻子，他孩子的母亲，为他做饭，洗衣服，缝一颗掉了的纽扣。然后，我们一起在时光中变老',
-          pic: '/static/img/article1.jpg',
-          date: '2018-09-07',
-          favs: 26,
-          comments: 5
-        },
-        {
-          id: 2,
-          title: '我希望我的爱情是这样的',
-          desc: '我希望我的爱情是这样的，相濡以沫，举案齐眉，平淡如水。我在岁月中找到他，依靠他，将一生交付给他。做他的妻子，他孩子的母亲，为他做饭，洗衣服，缝一颗掉了的纽扣。然后，我们一起在时光中变老',
-          pic: '/static/img/article2.jpg',
-          date: '2018-09-07',
-          favs: 26,
-          comments: 5
-        },
-        {
-          id: 3,
-          title: '我希望我的爱情是这样的',
-          desc: '我希望我的爱情是这样的，相濡以沫，举案齐眉，平淡如水。我在岁月中找到他，依靠他，将一生交付给他。做他的妻子，他孩子的母亲，为他做饭，洗衣服，缝一颗掉了的纽扣。然后，我们一起在时光中变老',
-          pic: '/static/img/article3.jpg',
-          date: '2018-09-07',
-          favs: 26,
-          comments: 5
-        },
-        {
-          id: 4,
-          title: '我希望我的爱情是这样的',
-          desc: '我希望我的爱情是这样的，相濡以沫，举案齐眉，平淡如水。我在岁月中找到他，依靠他，将一生交付给他。做他的妻子，他孩子的母亲，为他做饭，洗衣服，缝一颗掉了的纽扣。然后，我们一起在时光中变老',
-          pic: '/static/img/article3.jpg',
-          date: '2018-09-07',
-          favs: 26,
-          comments: 5
-        },
-        {
-          id: 5,
-          title: '我希望我的爱情是这样的',
-          desc: '我希望我的爱情是这样的，相濡以沫，举案齐眉，平淡如水。我在岁月中找到他，依靠他，将一生交付给他。做他的妻子，他孩子的母亲，为他做饭，洗衣服，缝一颗掉了的纽扣。然后，我们一起在时光中变老',
-          pic: '/static/img/article3.jpg',
-          date: '2018-09-07',
-          favs: 26,
-          comments: 5
-        }
-      ]
+      articleList: []
     }
   },
   methods: {
     onDetail: function (id) {
       this.$router.push(`/blog/article/${id}`)
+    },
+    getArticleList: function () {
+      const getArticleList = this.$axios.get('/api/article')
+      getArticleList.then((res) => {
+        if (res.status === 200) {
+          this.articleList = res.data.result
+        }
+      }, (err) => {
+        alert('文章列表获取失败')
+        console.log(err)
+      })
+      return getArticleList
     }
   }
 }
