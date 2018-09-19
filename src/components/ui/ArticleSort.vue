@@ -7,7 +7,7 @@
         </div>
         <div class="article-sort-item" v-for="(item,index) in list" :key="index">
           <time>{{item.date}}</time>
-          <a :href="'#/blog/article/'+item.id">{{item.title}}</a>
+          <a :href="'/blog/article/'+item.id">{{item.title}}</a>
         </div>
       </div>
     </div>
