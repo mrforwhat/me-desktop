@@ -13,6 +13,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "animate.css": "^3.7.0",
     "axios": "^0.18.0",
     "koa": "^2.5.3",
