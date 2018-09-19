@@ -23,7 +23,7 @@
         <a class="profile-link-item">
           <i class="iconfont icon-email"></i>
         </a>
-        <a href="#/blog/home" class="profile-link-item">
+        <a href="/blog/home" class="profile-link-item">
           <i class="iconfont icon-blog"></i>
         </a>
       </div>
