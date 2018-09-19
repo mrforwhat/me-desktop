@@ -4,6 +4,7 @@ const json = require('koa-json')
 const logger = require('koa-logger')
 const bodyParser = require('koa-bodyparser')
 const serve = require('koa-static')
+const historyApiFallback = require('koa-history-api-fallback')
 const api = require('./routes/api')
 const path = require('path')
 const app = new Koa()
@@ -18,7 +19,7 @@ router.get('/404', async (ctx, next) => {
 })
 api(app)
 app.use(router.routes())
-
+app.use(historyApiFallback())
 app.use(serve(path.resolve('../dist')))
 app.listen(3010, () => {
   console.log('server is running at http://localhost:3010')
