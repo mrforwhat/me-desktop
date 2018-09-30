@@ -7,6 +7,8 @@ import Article from '@/components/blog/Article'
 import ArticleDetail from '@/components/blog/ArticleDetail'
 import Category from '@/components/blog/Category'
 import Tag from '@/components/blog/Tag'
+import Invite from '@/components/h5/Invite'
+
 Vue.use(Router)
 
 export default new Router({
@@ -16,6 +18,11 @@ export default new Router({
       path: '/',
       name: 'Resume',
       component: Resume
+    },
+    {
+      path: '/invite',
+      name: 'invite',
+      component: Invite
     },
     {
       path: '/blog',

@@ -16,6 +16,7 @@
     "@babel/polyfill": "^7.0.0",
     "animate.css": "^3.7.0",
     "axios": "^0.18.0",
+    "blear.utils.plan": "^2.2.1",
     "koa": "^2.5.3",
     "koa-bodyparser": "^4.2.1",
     "koa-history-api-fallback": "^0.1.3",

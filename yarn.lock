@@ -1098,6 +1098,26 @@ binary-extensions@^1.0.0:
   version "1.12.0"
   resolved "http://registry.npm.taobao.org/binary-extensions/download/binary-extensions-1.12.0.tgz#c2d780f53d45bba8317a8902d4ceeaf3a6385b14"
 
+blear.classes.class@1.x:
+  version "1.1.7"
+  resolved "http://registry.npm.taobao.org/blear.classes.class/download/blear.classes.class-1.1.7.tgz#5491cc34002e18324db20d030fa6f0fbd4709ff2"
+  dependencies:
+    blear.utils.access "1.x"
+    blear.utils.debug "1.x"
+    blear.utils.object "1.x"
+    blear.utils.random "1.x"
+    blear.utils.typeis "1.x"
+
+blear.classes.events@1.x:
+  version "1.0.7"
+  resolved "http://registry.npm.taobao.org/blear.classes.events/download/blear.classes.events-1.0.7.tgz#96e6685361bc99012bdbaad6b0d37ef11c53cf80"
+  dependencies:
+    blear.classes.class "1.x"
+    blear.utils.access "1.x"
+    blear.utils.array "1.x"
+    blear.utils.object "1.x"
+    blear.utils.typeis "1.x"
+
 blear.core.attribute@^1.0.13:
   version "1.0.13"
   resolved "http://registry.npm.taobao.org/blear.core.attribute/download/blear.core.attribute-1.0.13.tgz#5ce8f175deb2260002b13261a82133c53b452cee"
@@ -1149,6 +1169,31 @@ blear.utils.compatible@1.x:
     blear.utils.array "1.x"
     blear.utils.string "1.x"
 
+blear.utils.date@1.x:
+  version "1.0.11"
+  resolved "http://registry.npm.taobao.org/blear.utils.date/download/blear.utils.date-1.0.11.tgz#72395a74d6f4fbd184989b078fa57b563f5a159a"
+  dependencies:
+    blear.utils.access "1.x"
+    blear.utils.array "1.x"
+    blear.utils.number "1.x"
+    blear.utils.string "1.x"
+    blear.utils.typeis "1.x"
+
+blear.utils.debug@1.x, blear.utils.debug@^1.0.2:
+  version "1.0.2"
+  resolved "http://registry.npm.taobao.org/blear.utils.debug/download/blear.utils.debug-1.0.2.tgz#4c2c5e2f75b8f68dd5ecba887190dcfb3ba5e135"
+
+blear.utils.function@1.x:
+  version "1.0.5"
+  resolved "http://registry.npm.taobao.org/blear.utils.function/download/blear.utils.function-1.0.5.tgz#94c92e6605d3e4241f8243f0cec6b3b725524e6a"
+  dependencies:
+    blear.utils.access "1.x"
+    blear.utils.array "1.x"
+    blear.utils.date "1.x"
+    blear.utils.debug "^1.0.2"
+    blear.utils.time "1.x"
+    blear.utils.typeis "1.x"
+
 blear.utils.json@1.x, blear.utils.json@^1.0.5:
   version "1.0.5"
   resolved "http://registry.npm.taobao.org/blear.utils.json/download/blear.utils.json-1.0.5.tgz#eaeaedb8b958382d338ac69279f0d7952bc897f6"
@@ -1156,10 +1201,41 @@ blear.utils.json@1.x, blear.utils.json@^1.0.5:
     blear.utils.object "1.x"
     blear.utils.typeis "1.x"
 
+blear.utils.number@1.x:
+  version "1.0.3"
+  resolved "http://registry.npm.taobao.org/blear.utils.number/download/blear.utils.number-1.0.3.tgz#c6ed3713c8a97d3ceea23695459315e47c5a8616"
+  dependencies:
+    blear.utils.array "1.x"
+    blear.utils.typeis "1.x"
+
 blear.utils.object@1.x, blear.utils.object@^1.0.14:
   version "1.0.14"
   resolved "http://registry.npm.taobao.org/blear.utils.object/download/blear.utils.object-1.0.14.tgz#6df92695841d501fef614aaf36ffe50b8478188d"
   dependencies:
+    blear.utils.typeis "1.x"
+
+blear.utils.plan@^2.2.1:
+  version "2.2.1"
+  resolved "http://registry.npm.taobao.org/blear.utils.plan/download/blear.utils.plan-2.2.1.tgz#adf90417838e0a4d870d100df921551c45daaf57"
+  dependencies:
+    blear.classes.class "1.x"
+    blear.classes.events "1.x"
+    blear.utils.access "1.x"
+    blear.utils.collection "1.x"
+    blear.utils.function "1.x"
+    blear.utils.number "1.x"
+    blear.utils.object "1.x"
+    blear.utils.random "1.x"
+    blear.utils.time "1.x"
+    blear.utils.typeis "1.x"
+
+blear.utils.random@1.x:
+  version "1.0.4"
+  resolved "http://registry.npm.taobao.org/blear.utils.random/download/blear.utils.random-1.0.4.tgz#6f482f3cdc2e7f1a15928fc7cad7a33fc60ce739"
+  dependencies:
+    blear.utils.access "1.x"
+    blear.utils.number "1.x"
+    blear.utils.string "1.x"
     blear.utils.typeis "1.x"
 
 blear.utils.string@1.x:
@@ -1171,6 +1247,13 @@ blear.utils.string@1.x:
     blear.utils.json "^1.0.5"
     blear.utils.object "^1.0.14"
     blear.utils.typeis "^1.0.3"
+
+blear.utils.time@1.x:
+  version "1.0.6"
+  resolved "http://registry.npm.taobao.org/blear.utils.time/download/blear.utils.time-1.0.6.tgz#50d0d1baba0d8e588ffec37c854da85cd9f2971b"
+  dependencies:
+    blear.utils.date "1.x"
+    blear.utils.typeis "1.x"
 
 blear.utils.typeis@1.x, blear.utils.typeis@^1.0.3:
   version "1.0.3"
